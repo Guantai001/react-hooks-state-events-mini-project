@@ -1,11 +1,15 @@
-import React from "react";
+import React ,{useEffect,useState}from "react";
 
-function Task() {
+function Task(prop) {
+
+s
   return (
-    <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+    <div className="task" >
+    <div className="label">{prop.category}</div>
+    <div className="text">{prop.text}</div>
+
+    <button onClick={() => prop.onDelete(prop.id)}>X</button>
+
     </div>
   );
 }

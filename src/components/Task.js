@@ -1,15 +1,23 @@
-import React ,{useEffect,useState}from "react";
+import React, { useState } from "react";
 
-function Task(prop) {
+function Task({ text, category }) {
+  const [deleted, setDeleted] = useState(false);
 
-s
+  function handleDelete() {
+    setDeleted(true);
+  }
+
+  if (deleted) {
+    return null;
+  }
+
   return (
-    <div className="task" >
-    <div className="label">{prop.category}</div>
-    <div className="text">{prop.text}</div>
-
-    <button onClick={() => prop.onDelete(prop.id)}>X</button>
-
+    <div className="task">
+      <div className="label">{category}</div>
+      <div className="text">{text}</div>
+      <button className="delete" onClick={handleDelete}>
+        X
+      </button>
     </div>
   );
 }

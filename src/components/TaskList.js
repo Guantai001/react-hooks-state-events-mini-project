@@ -12,7 +12,7 @@ function TaskList(prop) {
           category={task.category}
           onDelete={prop.onDelete}
           id={task.id}
-          
+      
           />
         ))}
     </div>
